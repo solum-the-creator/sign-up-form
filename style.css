@@ -8,6 +8,10 @@ html, body {
     --color-blue: #0962FF;
     --color-dark-blue:#0C2551;
     --color-white:#FBFBFB;
+    --color-text:#576C91;  
+    --color-light-blue: #c7dbfe;
+    --color-blue-active: #3c82fc;
+    --color-error: #FF4343;
 }
 
 * {
@@ -28,13 +32,19 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'PT Serif', serif;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
 }
 
 main{
     display: flex;
     flex: 1;
     height: 100vh;
-    padding: 70px;
+    padding:70px;
     justify-content: center;
     align-items: center;
     gap: 64px;
@@ -44,13 +54,125 @@ main{
     flex: 1 1 auto;
     min-width: 360px;
     max-width: 560px;
-    align-self: stretch;
+    height: max(620px, 80%);
+    align-self: center;
     background-color: var(--color-white);
     border-radius: 40px;
     box-shadow: 4px 4px 44px 12px rgba(4, 18, 42, 0.184);
+    padding: 32px 46px;
+}
+
+.sign-up-form h1{
+    color: var(--color-dark-blue);
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.sign-up-form .header-form p{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text);
+    
+}
+
+.sign-up-form .header-form{
+    margin-bottom: 24px;
+}
+
+.main-form .sign-with{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 36px;
+    
+}
+
+.sign-up-form button {
+    width: 80%;
+    max-width: 246px;
+    min-width: 180px;
+    height: 54px;
+    border-radius: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    
 }
 
 
+
+.sign-up-form .sign-with button {
+    flex: 1;
+    
+    border: 1px solid var(--color-light-blue);
+    box-shadow: 2px 2px 12px 4px rgba(157, 189, 243, 0.138);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 12px;
+    transition: all .1s ease;
+}
+
+.sign-up-form .sign-with button::before{
+    content: "";
+    
+    background-size: cover;
+    width: 24px;
+    filter: invert(27%) sepia(65%) saturate(4091%) hue-rotate(213deg) brightness(98%) contrast(105%);
+    height: 24px;
+    display: block;
+}
+.sign-up-form .sign-with .facebook-button::before{
+    background: url(images/icons8-facebook.svg) no-repeat center;
+}
+.sign-up-form .sign-with .google-button::before{
+    background: url(images/icons8-google.svg) no-repeat center;
+}
+
+.sign-up-form .submit-button{
+    margin-top: 20px;
+    border: 1px solid var(--color-light-blue);
+    box-shadow: 2px 2px 12px 4px rgba(5, 27, 65, 0.138);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    transition: all .2s ease;
+    max-width: 210px;
+    margin-bottom: 20px;
+}
+
+.sign-up-form .submit-button:hover{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border-color: #0962FF;
+    box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+}
+
+.sign-up-form .submit-button:active{
+    background-color: var(--color-blue-active);
+    color: var(--color-white);
+    border-color: #0962FF;
+    box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+}
+
+.sign-up-form .sign-with button:hover{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border-color: #0962FF;
+    box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+}
+
+.sign-up-form .sign-with button:active{
+    background-color: var(--color-blue-active);
+    color: var(--color-white);
+    border-color: #0962FF;
+    box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+}
 
 .image-box{
     flex: 1 2 auto;
@@ -61,4 +183,167 @@ main{
 .image-box img{
     width: 100%;
     height: auto;
+}
+
+
+/* inputs style */
+
+.main-form .user-data {
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: flex-start;
+    
+}
+
+.main-form .user-data div{
+    flex: 1;
+    width: 80%;
+    max-width: 246px;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main-form .user-data .name-input {
+    margin-right: 24px;
+}
+
+.main-form label {
+    color: var(--color-text);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    margin-left: 6px;
+}
+
+
+.main-form .passwords-input {
+    display: flex;
+    margin-bottom: 24px;
+    
+}
+
+.main-form .passwords-input div{
+    flex: 1;
+    width: 80%;
+    max-width: 246px;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main-form .passwords-input .password-input{
+    margin-right: 24px;
+}
+
+.main-form>.user-data input, 
+.main-form>.passwords-input input {
+    appearance: none;
+    border: none;
+    width: 100%;
+    max-width: 246px;
+    min-width: 180px;
+    height: 54px;
+    border-radius: 14px;
+    
+    border: 1px solid var(--color-light-blue);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-dark-blue);
+    transition: all .3s ease;
+    padding: 0.8rem;
+}
+.main-form>.user-data input:focus-visible, 
+.main-form>.passwords-input input:focus-visible{
+    border: 1px solid var(--color-blue-active);
+}
+
+.main-form>.user-data input:focus, 
+.main-form>.passwords-input input:focus{
+    outline: none;
+}
+
+.main-form>.user-data input:invalid, 
+.main-form>.passwords-input input:invalid{
+    border: 1px solid var(--color-error);
+    box-shadow: 2px 2px 12px 4px rgba(243, 157, 157, 0.159);
+}
+
+
+.main-form .accept-checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.main-form .accept-checkbox input{
+    flex: 1 0 auto;
+    display: block;
+    align-self: flex-start;
+   cursor: pointer;
+   
+
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: transparent;
+  /* Not removed via appearance */
+  
+
+  font: inherit;
+  
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid var(--color-light-blue);
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  box-shadow: 1px 1px 10px 1px rgba(38, 24, 93, 0.052);
+
+  display: grid;
+  place-content: center;
+
+}
+
+.main-form .accept-checkbox input::before{
+    content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: center;
+  transition: 120ms transform ease-in-out;
+  /* Windows High Contrast Mode */
+  background-color: var( --color-blue-active);
+
+}
+
+.main-form .accept-checkbox input:focus{
+    outline: none;
+}
+
+
+.main-form .accept-checkbox input:checked::before{
+    transform: scale(1.5);
+}
+
+.main-form .accept-checkbox label{
+    display: block;
+    cursor: pointer;
+}
+
+.have-account{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.have-account a{
+    text-decoration: none;
+    color: var(--color-blue);
+}
+
+.have-account a:hover{
+    color: var(--color-error);
 }
