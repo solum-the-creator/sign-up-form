@@ -12,6 +12,7 @@ html, body {
     --color-light-blue: #c7dbfe;
     --color-blue-active: #3c82fc;
     --color-error: #FF4343;
+    --color-valid: #6bfc7e;
 }
 
 * {
@@ -51,6 +52,7 @@ main{
 }
 
 .sign-up-form {
+    position: relative;
     flex: 1 1 auto;
     min-width: 360px;
     max-width: 560px;
@@ -124,8 +126,17 @@ main{
     width: 24px;
     filter: invert(27%) sepia(65%) saturate(4091%) hue-rotate(213deg) brightness(98%) contrast(105%);
     height: 24px;
+    transition: all .1s ease-in-out;
     display: block;
+    
 }
+.sign-up-form .sign-with button:hover::before{
+
+    filter: invert(100%) sepia(88%) saturate(47%) hue-rotate(212deg) brightness(109%) contrast(97%);
+
+}
+
+
 .sign-up-form .sign-with .facebook-button::before{
     background: url(images/icons8-facebook.svg) no-repeat center;
 }
@@ -151,6 +162,7 @@ main{
     color: var(--color-white);
     border-color: #0962FF;
     box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+    scale: 1.06;
 }
 
 .sign-up-form .submit-button:active{
@@ -158,6 +170,7 @@ main{
     color: var(--color-white);
     border-color: #0962FF;
     box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+    scale: 1.03;
 }
 
 .sign-up-form .sign-with button:hover{
@@ -165,6 +178,7 @@ main{
     color: var(--color-white);
     border-color: #0962FF;
     box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+    scale: 1.06;
 }
 
 .sign-up-form .sign-with button:active{
@@ -172,6 +186,8 @@ main{
     color: var(--color-white);
     border-color: #0962FF;
     box-shadow: 2px 2px 24px 6px rgba(6, 36, 87, 0.253);
+    scale: 1.03;
+    
 }
 
 .image-box{
@@ -265,10 +281,15 @@ main{
     outline: none;
 }
 
-.main-form>.user-data input:invalid, 
-.main-form>.passwords-input input:invalid{
-    border: 1px solid var(--color-error);
-    box-shadow: 2px 2px 12px 4px rgba(243, 157, 157, 0.159);
+.main-form>.user-data input:valid,
+.main-form>.passwords-input input:valid {
+    border: 1px solid var(--color-valid);
+    box-shadow: 2px 2px 8px 4px rgba(164, 243, 157, 0.103);
+}
+
+.invalid-input{
+    border: 1px solid var(--color-error) !important;
+    box-shadow: 2px 2px 12px 4px rgba(253, 127, 127, 0.159) !important;
 }
 
 
@@ -346,4 +367,39 @@ main{
 
 .have-account a:hover{
     color: var(--color-error);
+}
+
+
+/* right logo */
+
+.odin-logo {
+    position: absolute;
+    left: 70%;
+    top: -8%;
+    width: 120px;
+    height: 120px;
+    background-color: var(--color-white);
+    padding: 14px;
+    box-shadow: 4px 4px 16px 4px rgba(4, 18, 42, 0.201);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.odin-logo:hover{
+    scale: 1.1;   
+}
+
+.odin-logo:active{
+    scale: 1.06;
+}
+
+.odin-logo img{
+    max-width: 120px;
+    max-height: 120px;
+    width: 80%;
+    height: auto;
 }

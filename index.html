@@ -13,6 +13,9 @@
 <body>
     <main>
         <div class="sign-up-form">
+            <div class="odin-logo">
+                <img src="images/odin-mask.png" alt="">
+            </div>
             <form action="#" method="get">
                 <div class="header-form">
                     <h1>Sign Up</h1>
@@ -28,31 +31,31 @@
                     <div class="user-data">
                         <div class="name-input">
                             <label for="user-name">Name</label>
-                            <input name="userName" id="user-name" type="text">
+                            <input name="userName" id="user-name" type="text" required>
                         </div>
                         <div class="email-input">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </div>
                     </div>
                     <div class="passwords-input">
                         <div class="password-input">
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password">
+                            <input type="password" name="password" id="password" minlength="8" required>
                         </div>
                         <div class="password-confirm-input">
                             <label for="confirm-password">Password Confirm</label>
-                            <input type="password" name="confirmPassword" id="confirm-password">
+                            <input type="password" name="confirmPassword" id="confirm-password" required>
                         </div>
                     </div>
                         <div class="accept-checkbox">
-                            <input type="checkbox" name="acceptPrivacy" id="accept-privacy">
+                            <input type="checkbox" name="acceptPrivacy" id="accept-privacy" required>
                             <label for="accept-privacy">
                                 Creating account means you're okay without our Terms of Service
                                 and our Privacy Police
                             </label>
                         </div>
-                        <button class="submit-button" type="button">Create an Account</button>
+                        <button class="submit-button" type="submit">Create an Account</button>
                         <p class="have-account">Already have an account? <a href="#">Sign In</a></p>
                 </div>
             </form>
